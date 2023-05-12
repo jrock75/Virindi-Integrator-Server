@@ -1,3 +1,5 @@
+## Pegasus
+
 ### Information
 A slapped together emulator for Virindi Integrator 2.
 
