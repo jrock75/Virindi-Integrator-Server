@@ -1,6 +1,3 @@
-## Pegasus
-[![Build Status](https://travis-ci.com/Rawaho/Pegasus.svg?branch=master)](https://travis-ci.com/Rawaho/Pegasus)  
-
 ### Information
 A slapped together emulator for Virindi Integrator 2.
 
