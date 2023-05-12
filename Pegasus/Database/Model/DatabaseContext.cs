@@ -23,9 +23,15 @@ namespace Pegasus.Database.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            var connectionString = $"server={ConfigManager.Config.MySql.Host};port={ConfigManager.Config.MySql.Port};user={ConfigManager.Config.MySql.Username};" +
+                                   $"password={ConfigManager.Config.MySql.Password};database={ConfigManager.Config.MySql.Database};" +
+                                   $"TreatTinyAsBoolean=False;SslMode=None;AllowPublicKeyRetrieval=true";
+
             if (!optionsBuilder.IsConfigured)
-                optionsBuilder.UseMySql($"server={ConfigManager.Config.MySql.Host};port={ConfigManager.Config.MySql.Port};user={ConfigManager.Config.MySql.Username}" +
-                    $";password={ConfigManager.Config.MySql.Password};database={ConfigManager.Config.MySql.Database}");
+                optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString), builder =>
+                {
+                    builder.EnableRetryOnFailure(10);
+                });
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
