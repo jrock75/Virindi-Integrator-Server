@@ -161,6 +161,7 @@ namespace Pegasus.Map
         [UpdateMessageHandler(UpdateType.SetSetting)]
         [UpdateMessageHandler(UpdateType.Profile)]
         [UpdateMessageHandler(UpdateType.Use)]
+        [UpdateMessageHandler(UpdateType.UsePortal)]
         public static void UpdateRelayVTank(Session session, IReadable message, UpdateParameters parameters)
         {
             IWritable update = BuildUpdate(message as IWritable, 0u, UpdateFlag.VTank);

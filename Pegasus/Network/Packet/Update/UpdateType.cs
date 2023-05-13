@@ -11,7 +11,7 @@
         SpellCastComplete = 7,
         AllSpellsExpired  = 8,
         FollowMe          = 9,
-        const_9           = 10,
+        UsePortal         = 10,
         Stop              = 11,
         const_11          = 12,
         ForceBuff         = 13,
